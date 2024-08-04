@@ -6,13 +6,13 @@ interface CommandData {
     description: string;
     direct?: boolean;
     permissions?: PermissionsString[];
-    execute: (interaction?: CommandInteraction, reason?: string) => void;
+    execute: (interaction: CommandInteraction, reason?: string) => void;
 }
 
 export class Command implements CommandData {
     constructor(private data: CommandData) {}
 
-    execute(interaction?: CommandInteraction, reason?: string): void {
+    execute(interaction: CommandInteraction, reason?: string): void {
         this.data.execute(interaction, reason);
     }
 
